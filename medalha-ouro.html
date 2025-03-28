@@ -4,28 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <title>🏅 Medalha de Ouro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; }
-        .container { max-width: 700px; margin: auto; background: white; padding: 30px; border-radius: 10px;
-                     box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #d4af37; }
-        .score { font-weight: bold; font-size: 1.2em; margin-top: 20px; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f9f9f9; }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #d4af37; margin-bottom: 10px; }
+        .score {
+            font-weight: bold;
+            font-size: 1.3em;
+            margin: 10px 0 20px 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🏅 Medalha de Ouro</h1>
-    		<script>
-        		const params = new URLSearchParams(window.location.search);
-        		const score = params.get("score");
-        		if (score) {
-            			document.getElementById("pontuacao").innerText = "Sua pontuação foi: " + score + " pontos.";
-        		}
-		</script>
-	<p class="score" id="pontuacao">Sua pontuação foi: ...</p>
+        <p class="score" id="pontuacao">Sua pontuação foi: ...</p>
         <p>Você já é um ótimo ouvinte. Tem a capacidade de fazer as pessoas se sentirem ouvidas e quererem chamá-lo para conversar. Você permanece emocionalmente presente e oferece sua atenção total às pessoas. Continue crescendo e evoluindo. Prossiga com a leitura deste livro para aprender a se tornar um ouvinte ainda mais eficiente.</p>
-	</div>
-        
-    
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const score = params.get("score");
+        if (score) {
+            document.getElementById("pontuacao").innerText = "Sua pontuação foi: " + score + " pontos.";
+        }
+    </script>
 </body>
 </html>
