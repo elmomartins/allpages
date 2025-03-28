@@ -3,17 +3,27 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Medalha de Prata</title>
+    <title>🥈 Medalha de Prata</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; }
-        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .container { max-width: 700px; margin: auto; background: white; padding: 30px; border-radius: 10px;
+                     box-shadow: 0 0 10px rgba(0,0,0,0.1); }
         h1 { color: #c0c0c0; }
+        .score { font-weight: bold; font-size: 1.2em; margin-top: 20px; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🥈 Medalha de Prata</h1>
         <p>As pessoas gostam de conversar com você, mas às vezes, quando o assunto fica incômodo ou ganha uma carga emocional, você muda de assunto ou faz uma piada. As ferramentas e ideias neste livro o ajudarão a continuar crescendo e se tornar um ouvinte ainda mais eficiente.</p>
+        <p class="score" id="pontuacao">Sua pontuação foi: ...</p>
     </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const score = params.get("score");
+        if (score) {
+            document.getElementById("pontuacao").innerText = "Sua pontuação foi: " + score + " pontos.";
+        }
+    </script>
 </body>
 </html>

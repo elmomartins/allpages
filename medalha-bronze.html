@@ -3,17 +3,27 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Medalha de Bronze</title>
+    <title>🥉 Medalha de Bronze</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; }
-        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .container { max-width: 700px; margin: auto; background: white; padding: 30px; border-radius: 10px;
+                     box-shadow: 0 0 10px rgba(0,0,0,0.1); }
         h1 { color: #cd7f32; }
+        .score { font-weight: bold; font-size: 1.2em; margin-top: 20px; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🥉 Medalha de Bronze</h1>
         <p>Se você está nesta categoria, talvez acredite ser um ouvinte melhor do que realmente é. Talvez esteja passando para as pessoas a impressão de que não se importa com o que elas dizem, ou pode interpretar as coisas do jeito errado com frequência. Mas não se preocupe. As coisas que aprenderá neste livro com certeza vão te ajudar.</p>
+        <p class="score" id="pontuacao">Sua pontuação foi: ...</p>
     </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const score = params.get("score");
+        if (score) {
+            document.getElementById("pontuacao").innerText = "Sua pontuação foi: " + score + " pontos.";
+        }
+    </script>
 </body>
 </html>
