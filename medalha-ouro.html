@@ -15,15 +15,17 @@
 <body>
     <div class="container">
         <h1>🏅 Medalha de Ouro</h1>
+    		<script>
+        		const params = new URLSearchParams(window.location.search);
+        		const score = params.get("score");
+        		if (score) {
+            			document.getElementById("pontuacao").innerText = "Sua pontuação foi: " + score + " pontos.";
+        		}
+		</script>
+	<p class="score" id="pontuacao">Sua pontuação foi: ...</p>
         <p>Você já é um ótimo ouvinte. Tem a capacidade de fazer as pessoas se sentirem ouvidas e quererem chamá-lo para conversar. Você permanece emocionalmente presente e oferece sua atenção total às pessoas. Continue crescendo e evoluindo. Prossiga com a leitura deste livro para aprender a se tornar um ouvinte ainda mais eficiente.</p>
-        <p class="score" id="pontuacao">Sua pontuação foi: ...</p>
-    </div>
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const score = params.get("score");
-        if (score) {
-            document.getElementById("pontuacao").innerText = "Sua pontuação foi: " + score + " pontos.";
-        }
-    </script>
+	</div>
+        
+    
 </body>
 </html>
