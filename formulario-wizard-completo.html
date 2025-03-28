@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Hábitos de Escuta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html { font-size: 18px; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        button {
+            margin-top: 20px;
+            margin-right: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="radio"] {
+            transform: scale(1.4);
+            margin-right: 10px;
+        }
+        label {
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            background: #f2f2f2;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        label:hover {
+            background-color: #e0e0e0;
+        }
+        #progress-container {
+            margin-bottom: 20px;
+        }
+        #progress-bar {
+            height: 8px;
+            background-color: #4CAF50;
+            width: 0%;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Hábitos de Escuta</h1>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+    <form id="formulario">
+<div class="step active" id="step1">
+<p><strong>1. Quando estou conversando ao telefone, consigo responder a e-mails e mensagens ao mesmo tempo.</strong></p>
+
+        <label>
+            <input type="radio" name="q1" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q1" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q1" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q1" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q1" value="5"> Com muita frequência
+        </label><button type="button" onclick="nextStep(1)">Próxima</button></div>
+<div class="step" id="step2">
+<p><strong>2. Ao escutar outra pessoa, começo a ficar nervoso e reagir de forma emotiva.</strong></p>
+
+        <label>
+            <input type="radio" name="q2" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q2" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q2" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q2" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q2" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(2)">Voltar</button><button type="button" onclick="nextStep(2)">Próxima</button></div>
+<div class="step" id="step3">
+<p><strong>3. Fico desconfortável com momentos de silêncio durante conversas.</strong></p>
+
+        <label>
+            <input type="radio" name="q3" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q3" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q3" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q3" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q3" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(3)">Voltar</button><button type="button" onclick="nextStep(3)">Próxima</button></div>
+<div class="step" id="step4">
+<p><strong>4. Se considero relevante compartilhar uma história, interrompo a outra pessoa para contá-la e depois deixo que ela volte a falar.</strong></p>
+
+        <label>
+            <input type="radio" name="q4" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q4" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q4" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q4" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q4" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(4)">Voltar</button><button type="button" onclick="nextStep(4)">Próxima</button></div>
+<div class="step" id="step5">
+<p><strong>5. As pessoas parecem ficar nervosas durante algumas conversas comigo, e isso acontece do nada.</strong></p>
+
+        <label>
+            <input type="radio" name="q5" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q5" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q5" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q5" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q5" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(5)">Voltar</button><button type="button" onclick="nextStep(5)">Próxima</button></div>
+<div class="step" id="step6">
+<p><strong>6. Para manter o ritmo da conversa, faço perguntas que podem ser respondidas com um simples “sim” ou “não”.</strong></p>
+
+        <label>
+            <input type="radio" name="q6" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q6" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q6" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q6" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q6" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(6)">Voltar</button><button type="button" onclick="nextStep(6)">Próxima</button></div>
+<div class="step" id="step7">
+<p><strong>7. Banco o “advogado do diabo” para levar a outra pessoa a ver um lado diferente do que ela defende.</strong></p>
+
+        <label>
+            <input type="radio" name="q7" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q7" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q7" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q7" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q7" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(7)">Voltar</button><button type="button" onclick="nextStep(7)">Próxima</button></div>
+<div class="step" id="step8">
+<p><strong>8. Se alguém quer conversar sobre o mesmo assunto o tempo todo, digo o que ela quer ouvir para cortar o papo.</strong></p>
+
+        <label>
+            <input type="radio" name="q8" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q8" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q8" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q8" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q8" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(8)">Voltar</button><button type="button" onclick="nextStep(8)">Próxima</button></div>
+<div class="step" id="step9">
+<p><strong>9. Enquanto escuto, fico pensando no que vou responder para a outra pessoa.</strong></p>
+
+        <label>
+            <input type="radio" name="q9" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q9" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q9" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q9" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q9" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(9)">Voltar</button><button type="button" onclick="nextStep(9)">Próxima</button></div>
+<div class="step" id="step10">
+<p><strong>10. Fico incomodado quando as pessoas falam de assuntos delicados comigo.</strong></p>
+
+        <label>
+            <input type="radio" name="q10" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q10" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q10" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q10" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q10" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(10)">Voltar</button><button type="button" onclick="nextStep(10)">Próxima</button></div>
+<div class="step" id="step11">
+<p><strong>11. Se outra pessoa tem uma opinião diferente em relação a algo do qual tenho muita convicção, evito entrar nesse assunto.</strong></p>
+
+        <label>
+            <input type="radio" name="q11" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q11" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q11" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q11" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q11" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(11)">Voltar</button><button type="button" onclick="nextStep(11)">Próxima</button></div>
+<div class="step" id="step12">
+<p><strong>12. Não presto muita atenção em detalhes como o ambiente da conversa ou a linguagem corporal. O que importa é o que a outra pessoa está falando.</strong></p>
+
+        <label>
+            <input type="radio" name="q12" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q12" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q12" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q12" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q12" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(12)">Voltar</button><button type="button" onclick="nextStep(12)">Próxima</button></div>
+<div class="step" id="step13">
+<p><strong>13. Se a outra pessoa tem dificuldade para dizer algo, ofereço sugestões.</strong></p>
+
+        <label>
+            <input type="radio" name="q13" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q13" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q13" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q13" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q13" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(13)">Voltar</button><button type="button" onclick="nextStep(13)">Próxima</button></div>
+<div class="step" id="step14">
+<p><strong>14. Se estou fazendo algo e sou interrompido por alguém que quer conversar, fico impaciente, desejando que a pessoa termine logo para que eu volte à minha tarefa.</strong></p>
+
+        <label>
+            <input type="radio" name="q14" value="1"> Nunca
+        </label>
+        <label>
+            <input type="radio" name="q14" value="2"> Raramente
+        </label>
+        <label>
+            <input type="radio" name="q14" value="3"> Às vezes
+        </label>
+        <label>
+            <input type="radio" name="q14" value="4"> Com frequência
+        </label>
+        <label>
+            <input type="radio" name="q14" value="5"> Com muita frequência
+        </label><button type="button" onclick="previousStep(14)">Voltar</button><button type="submit">Ver Resultado</button></div>
+
+    </form>
+</div>
+<script>
+    let currentStep = 1;
+    const totalSteps = 14;
+
+    function updateProgress() {
+        const progress = Math.round((currentStep - 1) / totalSteps * 100);
+        document.getElementById("progress-bar").style.width = progress + "%";
+    }
+
+    function nextStep(current) {
+        const radios = document.getElementsByName("q" + current);
+        let checked = false;
+        for (let r of radios) {
+            if (r.checked) checked = true;
+        }
+        if (!checked) {
+            alert("Por favor, selecione uma opção antes de continuar.");
+            return;
+        }
+        document.getElementById("step" + current).classList.remove("active");
+        document.getElementById("step" + (current + 1)).classList.add("active");
+        currentStep++;
+        updateProgress();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function previousStep(current) {
+        document.getElementById("step" + current).classList.remove("active");
+        document.getElementById("step" + (current - 1)).classList.add("active");
+        currentStep--;
+        updateProgress();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.getElementById("formulario").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const radios = document.querySelectorAll("input[type='radio']:checked");
+        if (radios.length < totalSteps) {
+            alert("Por favor, responda todas as perguntas.");
+            return;
+        }
+        let total = 0;
+        radios.forEach(r => total += parseInt(r.value));
+        if (total >= 14 && total <= 29) {
+            window.location.href = "https://elmomartins.github.io/allpages/medalha-ouro.html?score=" + total;
+        } else if (total >= 30 && total <= 49) {
+            window.location.href = "https://elmomartins.github.io/allpages/medalha-prata.html?score=" + total;
+        } else if (total >= 50 && total <= 70) {
+            window.location.href = "https://elmomartins.github.io/allpages/medalha-bronze.html?score=" + total;
+        }
+    });
+
+    window.onload = updateProgress;
+</script>
+</body>
+</html>
